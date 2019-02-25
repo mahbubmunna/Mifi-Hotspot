@@ -8,7 +8,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-import me.moonss.hotspottoggler.HotSpotToggleWidgetService;
+import me.moonss.hotspottoggler.service.HotSpotToggleWidgetService;
 
 public class TetheringUtils {
     public static final String HOTSPOT_ON_ACTION = "me.moonss.hotspottoggler.action.on_hotspot_widget";
@@ -26,21 +26,28 @@ public class TetheringUtils {
         context.startService(intent);
     }
 
-    public static void toggleTethering(Context context, boolean action) {
-        setCarrierDataEnabled(context, action);
+    public static void toggleTethering(Context context, boolean toggleEnabled, boolean dataEnabled) {
+        setCarrierDataEnabled(context, dataEnabled);
         WifiApManager wifiApManager = new WifiApManager(context);
         wifiApManager.showWritePermissionSettings(false);
-        wifiApManager.setWifiApEnabled(null, action);
+        wifiApManager.setWifiApEnabled(null, toggleEnabled);
     }
 
-    private static void setMobileDataEnabled(Context context, boolean enabled) throws ClassNotFoundException, NoSuchFieldException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
-        final ConnectivityManager conman = (ConnectivityManager)  context.getSystemService(Context.CONNECTIVITY_SERVICE);
+    private static void setMobileDataEnabled(Context context, boolean enabled)
+            throws ClassNotFoundException,
+            NoSuchFieldException,
+            IllegalAccessException,
+            NoSuchMethodException,
+            InvocationTargetException {
+        final ConnectivityManager conman = (ConnectivityManager)
+                context.getSystemService(Context.CONNECTIVITY_SERVICE);
         final Class conmanClass = Class.forName(conman.getClass().getName());
         final Field connectivityManagerField = conmanClass.getDeclaredField("mService");
         connectivityManagerField.setAccessible(true);
         final Object connectivityManager = connectivityManagerField.get(conman);
         final Class connectivityManagerClass =  Class.forName(connectivityManager.getClass().getName());
-        final Method setMobileDataEnabledMethod = connectivityManagerClass.getDeclaredMethod("setMobileDataEnabled", Boolean.TYPE);
+        final Method setMobileDataEnabledMethod =
+                connectivityManagerClass.getDeclaredMethod("setMobileDataEnabled", Boolean.TYPE);
         setMobileDataEnabledMethod.setAccessible(true);
 
         setMobileDataEnabledMethod.invoke(connectivityManager, enabled);

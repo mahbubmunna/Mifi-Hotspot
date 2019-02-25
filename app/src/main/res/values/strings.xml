@@ -4,4 +4,6 @@
     <string name="add_widget">Add widget</string>
 
     <string name="description_tethering_off">Tethering is off now</string>
+    <string name="action_setting">Settings</string>
+    <string name="pref_data_enable_key" translatable="false">enable_data</string>
 </resources>

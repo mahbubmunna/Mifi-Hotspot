@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference
+        android:defaultValue="@bool/pref_data_enabled_default"
+        android:key="@string/pref_data_enable_key"
+        android:summaryOn="Enabled"
+        android:summaryOff="Disabled"
+        android:title="Mobile Data"/>
+</PreferenceScreen>
