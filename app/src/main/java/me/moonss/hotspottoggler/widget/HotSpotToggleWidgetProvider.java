@@ -15,7 +15,6 @@ import me.moonss.hotspottoggler.utilities.TetheringUtils;
  * Implementation of App Widget functionality.
  */
 public class HotSpotToggleWidgetProvider extends AppWidgetProvider {
-    public static final String TAG = HotSpotToggleWidgetProvider.class.getSimpleName();
 
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId, int imgResource) {

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "49038688706",
+    "firebase_url": "https://hotspottoggler.firebaseio.com",
+    "project_id": "hotspottoggler",
+    "storage_bucket": "hotspottoggler.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:49038688706:android:897535aa30ee4747",
+        "android_client_info": {
+          "package_name": "me.moonss.hotspottoggler"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "49038688706-appebdhfs9afk5e0nnud1cj2venqggu3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "me.moonss.hotspottoggler",
+            "certificate_hash": "1d97a3d4f66cc643442c1a7107bc72e61efc8274"
+          }
+        },
+        {
+          "client_id": "49038688706-3bi4p5se2sj97elfiujqp20i7ae7dkok.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6EqPDvbptmCY-DwqlyFqa9-LJ6kdxcpY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "49038688706-3bi4p5se2sj97elfiujqp20i7ae7dkok.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
