@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    void startTethering(View view) {
+    public void startTethering(View view) {
         WifiApManager wifiApManager = new WifiApManager(this);
         ImageView tetheringImage = findViewById(R.id.tetheringImg);
         if (!wifiApManager.isWifiApEnabled()) {
