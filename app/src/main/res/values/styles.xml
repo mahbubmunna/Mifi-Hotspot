@@ -1,12 +1,34 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="Theme.Mifi" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
+        <item name="android:textColorPrimary">@color/textPrimary</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+        <item name="colorControlActivated">@color/colorControlActivated</item>
     </style>
+    
+    <style name="Widget.Mifi.Toolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="titleTextAppearance">@style/TextAppearance.Mifi.Toolbar</item>
+        <item name="android:theme">?theme</item>
+    </style>
+
+    <style name="TextAppearance.Mifi.Toolbar" parent="TextAppearance.MaterialComponents.Button">
+        <item name="android:textSize">16sp</item>
+        <item name="titleTextColor">@android:color/white</item>
+    </style>
+
+    <style name="Theme.Mifi.WithActionBar" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:textColorPrimary">@color/textPrimary</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+        <item name="titleTextColor">@android:color/white</item>
+    </style>
+
+
 
 </resources>

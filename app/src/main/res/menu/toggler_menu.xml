@@ -13,5 +13,14 @@
         android:orderInCategory="101"
         android:title="@string/about_title"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_privacy_policy"
+        android:orderInCategory="102"
+        android:title="@string/privacy_policy"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_exit"
+        android:orderInCategory="103"
+        android:title="@string/action_exit"/>
 
 </menu>

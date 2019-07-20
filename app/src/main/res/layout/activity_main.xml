@@ -7,46 +7,53 @@
     xmlns:ads="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.MainActivity">
 
-    <ImageView
-        android:id="@+id/tetheringImg"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginLeft="64dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginRight="64dp"
-        android:layout_marginBottom="64dp"
-        android:background="?android:selectableItemBackground"
-        android:contentDescription="@string/description_tethering_off"
-        android:onClick="startTethering"
-        android:src="@drawable/ic_portable_wifi_off_black_24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/messageTextView"
-        android:layout_width="wrap_content"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@drawable/ic_wifi_tethering_white_24dp"
+            app:title="@string/app_name"
+            style="@style/TextAppearance.Mifi.Toolbar" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/body_holder_liner_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/not_tethering_text"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:typeface="monospace"
-        app:layout_constraintBottom_toTopOf="@+id/ad_view"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/ad_view"
+        app:layout_constraintTop_toBottomOf="@id/app_bar_layout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tetheringImg"
-        app:layout_constraintVertical_bias="0.046"
-        tools:text="Not Tethered" />
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/tetheringAnim"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_gravity="center"
+            app:lottie_fileName="animation-hotspot-red.json" />
+
+
+        <TextView
+            android:id="@+id/messageTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/not_tethering_text"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:typeface="monospace"
+            android:textStyle="bold"
+            android:textColor="@color/textPrimary"
+            tools:text="Not Tethered" />
+
+    </LinearLayout>
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/ad_view"
@@ -60,6 +67,7 @@
         ads:adSize="BANNER"
         ads:adUnitId="@string/ADD_UNIT_ID"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/body_holder_liner_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent">

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HotSpotToggler</string>
+    <string name="app_name">MIFI HOTSPOT</string>
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
 
@@ -10,8 +10,10 @@
     <string name="about_title">About</string>
     <string name="ADD_UNIT_ID">ca-app-pub-3789846262832036/9346324400</string>
     <string name="ADD_APP_ID">ca-app-pub-3789846262832036~2182150254</string>
-    <string name="tethering_text">Hotspot On</string>
-    <string name="not_tethering_text">Hotspot Off</string>
+    <string name="tethering_text_on">( ON )</string>
+    <string name="not_tethering_text">( Off )</string>
     <string name="data_on">Data On</string>
     <string name="data_off">Data Off</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="action_exit">Exit</string>
 </resources>
